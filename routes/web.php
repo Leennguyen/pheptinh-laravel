@@ -17,20 +17,23 @@ use App\Http\Controllers\PheptinhController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::resource('cars',CarController::class);
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+// Route::resource('cars',CarController::class);
 
 
-Route::get('phuongtrinh',function(){
-    return view('phuongtrinh');
-});
+// Route::get('phuongtrinh',function(){
+//     return view('phuongtrinh');
+// });
 
-Route::get('pheptinh', function(){
-    return view('pheptinh');
-});
-
+// Route::get('pheptinh', function(){
+//     return view('pheptinh');
+// });
+// Route::get('car-list', function(){
+//     return view('car-list');
+// });
+Route::get('/car-create',[CarController::class, 'create']);
 // Route::post('phuongtrinh',function(Request $req){
 //     $a = $req->input('a');
 //     $b = $req->input('b');
@@ -50,6 +53,10 @@ Route::get('pheptinh', function(){
 
 // }) -> name('phuongtrinh.post');
 
-Route::post('phuongtrinh',[PhuongtrinhController::class , 'Giaipt'] )-> name('phuongtrinh.post');
-Route::post('pheptinh',[PheptinhController::class, 'Tinh'])->name('pheptinh.post');
-?>
+// Route::post('phuongtrinh',[PhuongtrinhController::class , 'Giaipt'] )-> name('phuongtrinh.post');
+// Route::post('pheptinh',[PheptinhController::class, 'Tinh'])->name('pheptinh.post');
+Route::get('/car-list',[CarController::class,'index']);
+// Route::get('/car-create',[CarController::class,'create']);
+
+
+Route::resource('cars',CarController::class);
